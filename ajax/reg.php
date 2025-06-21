@@ -23,13 +23,8 @@ if ($error != '') {
 $hash = "sadlkjn4598c0vzcxjv";
 $pass = md5($pass . $hash);
 
-$user = 'root';
-$password = 'root';
-$db = 'testing';
-$host = 'localhost';
+require_once '../mysql_connect.php';
 
-$dsn = 'mysql:host=' . $host . ';dbname=' . $db;
-$pdo = new PDO($dsn, $user, $password);
 $sql = 'INSERT INTO users(name, email, login, pass) VALUES(?, ?, ?, ?)';
 $query = $pdo->prepare($sql);
 $query->execute([$username, $email, $login, $pass]);

@@ -4,9 +4,18 @@
 
     <a class="p-2 text-dark" href="/">Главная</a>  
     </nav>    
+    <?php
+      if (!isset($_COOKIE['log'])):
+          ?>
     <div class="reg-container">
-      <a class="btn btn-outline-primary mr-2" href="#">Войти</a>
+      <a class="btn btn-outline-primary mr-2" href="auth.php">Войти</a>
       <a class="btn btn-outline-primary" href="reg.php">Регистрация</a>
     </div>
-    
+    <?php else:
+        ?>
+    <a class="btn btn-outline-primary" href="auth.php">Кабинет пользователя</a>
+    <?php
+    endif;
+    ?>
+
   </div>
